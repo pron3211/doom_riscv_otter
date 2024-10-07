@@ -30,7 +30,6 @@ SOURCES_doom_arch := \
 	i_system.c \
 	i_video.c \
 	s_sound.c \
-	boot.S \
 	doom_start.S \
 	console.c  \
 	libc_backend.c  \
