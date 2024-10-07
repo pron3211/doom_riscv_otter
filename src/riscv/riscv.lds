@@ -1,8 +1,8 @@
 MEMORY
 {
-    ROM   (xr)  : ORIGIN = 0x40100000, LENGTH = 0x100000	/* 1024k */
-    PSRAM (xrw) : ORIGIN = 0x41000000, LENGTH = 0x800000	/* 8192k */
-    BRAM  (xrw) : ORIGIN = 0x00000010, LENGTH = 0x03f0		/*  ~ 1k */
+    ROM   (xr)  : ORIGIN = 0x40100000, LENGTH = 0x100000	/* 1024k (game engine code)*/ 
+    PSRAM (xrw) : ORIGIN = 0x41000000, LENGTH = 0x800000	/* 8192k (game data) */
+    BRAM  (xrw) : ORIGIN = 0x00000010, LENGTH = 0x03f0		/*  ~ 1k (initializes risc-v core?) */
 }
 ENTRY(_start)
 SECTIONS {

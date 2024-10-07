@@ -30,11 +30,14 @@ SOURCES_doom_arch := \
 	i_system.c \
 	i_video.c \
 	s_sound.c \
-	start.S \
+	boot.S \
+	doom_start.S \
 	console.c  \
 	libc_backend.c  \
 	mini-printf.c \
 	$(NULL)
+
+# riscv64-unknown-elf-objdump -d doom-riscv.elf > doom-riscv.S
 
 
 all: doom-riscv.bin
