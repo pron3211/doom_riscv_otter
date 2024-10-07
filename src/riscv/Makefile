@@ -1,6 +1,5 @@
 CROSS ?= riscv64-unknown-elf-
 
-
 CC = $(CROSS)gcc
 OBJCOPY = $(CROSS)objcopy
 OBJDUMP = $(CROSS)objdump
@@ -40,7 +39,7 @@ SOURCES_doom_arch := \
 # riscv64-unknown-elf-objdump -d doom-riscv.elf > doom-riscv.S
 
 
-all: doom-riscv.bin
+all: doom-riscv.bin dump
 
 doom-riscv.elf: riscv.lds $(addprefix ../,$(SOURCES_doom)) $(SOURCES_doom_arch)
 	$(CC) $(CFLAGS) -Wl,-Bstatic,-T,riscv.lds,--strip-debug -o $@ $(addprefix ../,$(SOURCES_doom)) $(SOURCES_doom_arch)
