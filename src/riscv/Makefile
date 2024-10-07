@@ -3,6 +3,7 @@ CROSS ?= riscv64-unknown-elf-
 
 CC = $(CROSS)gcc
 OBJCOPY = $(CROSS)objcopy
+OBJDUMP = $(CROSS)objdump
 SIZE = $(CROSS)size
 ICEPROG = iceprog
 
@@ -54,6 +55,9 @@ clean:
 
 prog: doom-riscv.bin
 	$(ICEPROG) -o 1M $<
+
+dump: doom-riscv.elf
+	$(OBJDUMP) -d $< > $<.S
 
 prog_wad: data/doomu.wad
 	$(ICEPROG) -o 2M $<
